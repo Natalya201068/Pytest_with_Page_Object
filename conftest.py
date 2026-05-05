@@ -14,7 +14,7 @@ def pytest_addoption(parser):
 @pytest.fixture(scope="function")
 def browser(request):
     language = request.config.getoption("language")
-    my_proxy = os.getenv("MY_PROXY")
+    my_proxy = os.getenv("PROXY")
     options = Options()
     options.add_argument(f"--proxy-server={my_proxy}")
     options.add_experimental_option('prefs', {
